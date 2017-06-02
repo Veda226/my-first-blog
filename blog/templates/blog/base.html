@@ -12,8 +12,17 @@
 {% if user.is_authenticated %}
 	 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 {% endif %}
+
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
+<form action="submit/" method="post">{% csrf_token %}
+	<select name="myList">
+	<option value = "CS">CS</option>
+        <option value = "ST">ST</option>
+        <option value = "NHE">NHE</option>
+	</select>
+    	<input type="submit" value="Submit">
+</form>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">

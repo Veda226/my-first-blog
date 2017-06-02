@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <form>
+	<p>
+        <label>Select list</label>
+        <select name = "myList" onchange="run()">
+        <option value = "CS">CS</option>
+        <option value = "ST">ST</option>
+        <option value = "NHE">NHE</option>
+        </select>
+        </p>
+	<h1>{{ myList }}</h1>
+	<input type="text" name="username" class="form-control" placeholder="Desired Username">
+	<a href="/submit" class="btn btn-success ">POST</a>
+	
+	</form>
+       </fieldset>
+    </form>
+
+
+{% endblock %}

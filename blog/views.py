@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from .edatotal import Command
 
 # Create your views here.
 def post_list(request):
@@ -39,3 +40,10 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+def submit(request):
+    myList = request.POST.get('myList',False)
+    Command(myList)
+    return render(request, 'blog/test.html',{'myList':myList})
+
+
+
