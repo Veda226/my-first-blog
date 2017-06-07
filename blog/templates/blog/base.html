@@ -1,5 +1,9 @@
 {% load staticfiles %}
+<!DOCTYPE html>
+
 <html>
+
+
 <head>
 
 	
@@ -10,19 +14,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
-<link rel="stylesheet" href="assets/demo.css">
-	
-<link rel="stylesheet" href="assets/header-basic-light.css">
-	
-<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-
-	
 <title>Stock Optimization</title>
 
 	
+<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+	
+<link rel="stylesheet" href="{{% static 'css/header.css' %}">
+	
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
 
 </head>
-
 
 
 <body>
@@ -54,7 +56,7 @@
 	</div>
 
 	
-</head>
+</header>
 
 
     <div class="content container">
