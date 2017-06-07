@@ -52,4 +52,8 @@ def predict(request):
     #Command(myList)
     return render(request, 'blog/predict.html')
 
+def Pricing(request):
+    #Command(myList)
+    return render(request, 'blog/Pricing.html')
+
 
