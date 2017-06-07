@@ -7,7 +7,7 @@ import os
 import csv
 
 
-#from .views import mylist
+from .views import mylist
 
 def Command(mylist):
     """ Do your work here """
