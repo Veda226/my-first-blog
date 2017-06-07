@@ -43,13 +43,13 @@ def post_edit(request, pk):
 def submit(request):
     myList = request.POST.get('myList',False)
     myList1 = request.POST.get('dropdown-menu',False)
-    Command(myList)
+    #Command(myList)
     return render(request, 'blog/test.html',{'myList':myList})
 
 def predict(request):
     myList = request.POST.get('myList',False)
     myList1 = request.POST.get('dropdown-menu',False)
-    Command(myList)
+    #Command(myList)
     return render(request, 'blog/predict.html')
 
 
