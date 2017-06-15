@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import Post
+from .models import SearchISBN, Searchcsv
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
+from .forms import PostFormisbn
 from django.shortcuts import redirect
 #from .edatotal import Command
-
+from .SearchCSV import searchISBN
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -43,17 +45,22 @@ def post_edit(request, pk):
 def submit(request):
     myList = request.POST.get('myList',False)
     myList1 = request.POST.get('dropdown-menu',False)
-    #Command(myList)
     return render(request, 'blog/test.html',{'myList':myList})
 
 def predict(request):
     myList = request.POST.get('myList',False)
     myList1 = request.POST.get('dropdown-menu',False)
-    #Command(myList)
     return render(request, 'blog/predict.html')
 
 def Pricing(request):
     #Command(myList)
     return render(request, 'blog/Pricing.html')
 
+def SalesData(request):
+    #isbn = request.POST.get('isbn',False)
+    #ISBNresult = Searchcsv(isbn)
+    #isbndata = SearchISBN.objects 
+    #return render('blog/result.html',{'isbndata':isbndata})
+    return render(request, 'blog/ISBN.html')
+    
 

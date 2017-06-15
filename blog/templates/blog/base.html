@@ -23,13 +23,6 @@
 	
 <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
-
-</head>
-
-
-<body>
-
-
 	
 <header class="header-basic-light">
 
@@ -41,8 +34,8 @@
 
 
 		<nav>
-<a href="#">Home</a>
-		<a href="/Isbn/" class="selected">Predict</a>
+<a href="/">Home</a>
+		<a href="/Isbn" class="selected">Predict</a>
 
 		<a href="/Pricing/">Pricing</a>
 
@@ -59,24 +52,23 @@
 	
 </header>
 
+	
 
-    <div class="content container">
-        <div class="row">
-	    <div class="col">
-		 &nbsp;
+
+</head>
+
+
+<body>
+
+
+
+                <div class="col-md-9">
+                    {% block content %}
+		    {% endblock %}
+                </div>
 		
-		<form action="submit/" method="post">{% csrf_token %}
-		<select name="myList">
-		<option value = "CS">CS</option>
-	        <option value = "ST">ST</option>
-        	<option value = "NHE">NHE</option>
-		</select>
-    		<input type="submit" value="Submit"class="btn btn-primary"></button>
-		</form>
+
 			
-            </div>
-        </div>
-   
-     </div>
+
 </body>
 </html>
