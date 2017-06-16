@@ -9,6 +9,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 #from .SearchCSV import searchISBN
 from .tables import PersonTable
+from django_tables2 import RequestConfig
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -64,4 +65,5 @@ def Pricing(request):
 def person_list(request):
     #table = PersonTable(Person.objects.all())
     table = PersonTable(Person.objects.all())
-    return render(request, 'blog/person_list.html', {'table': Person.objects.all()})
+    RequestConfig(request).configure(table)
+    return render(request, 'blog/person_list.html', {'table': table})
