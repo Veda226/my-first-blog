@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^submit/',views.submit,name='submit'),
     url(r'^Isbn',views.predict,name='predict'),
     url(r'^Pricing/',views.Pricing, name = 'Pricing'),
-    url(r'^SalesData',views.SalesData, name = 'SalesData'),
+    #url(r'^SalesData',views.SalesData, name = 'SalesData'),
+    url(r'^SalesData',views.person_list, name = 'people'),
 ]

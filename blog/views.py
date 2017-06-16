@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .models import Post
-from .models import SearchISBN, Searchcsv
+#from .models import SearchISBN, Searchcsv
+from .models import Person
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
-from .forms import PostFormisbn
+#from .forms import PostFormisbn
 from django.shortcuts import redirect
-#from .edatotal import Command
-from .SearchCSV import searchISBN
+#from .SearchCSV import searchISBN
+from .tables import PersonTable
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -56,11 +57,11 @@ def Pricing(request):
     #Command(myList)
     return render(request, 'blog/Pricing.html')
 
-def SalesData(request):
-    #isbn = request.POST.get('isbn',False)
-    #ISBNresult = Searchcsv(isbn)
-    #isbndata = SearchISBN.objects 
-    #return render('blog/result.html',{'isbndata':isbndata})
-    return render(request, 'blog/ISBN.html')
+'''def SalesData(request):
+    table = PostFormisbn(Searchcsv.objects.all())
+    return render(request, 'blog/ISBN.html',{'table': table})'''
     
-
+def person_list(request):
+    #table = PersonTable(Person.objects.all())
+    table = PersonTable(Person.objects.all())
+    return render(request, 'blog/person_list.html', {'table': Person.objects.all()})
