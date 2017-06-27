@@ -1,28 +1,54 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-{# tutorial/templates/people.html #}
 {% load render_table from django_tables2 %}
 {% load static %}
+
+
 <!doctype html>
 <html>
 <head>
 <style>
 table {
-    border-collapse: collapse;
-    width: 100%;
+    
+    width: 40%;
 }
 
 th, td {
-    padding: 8px;
+    padding: 4px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 tr:hover{background-color:#f5f5f5}
+div {
+
+    padding: 2px;
+    margin: 5px;
+}
+        .floatedTable {
+            float:left;
+        }
+        .inlineTable {
+            display: inline-block;
+        }
+
 </style>
 </head>
 <body>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<table class="floatedTable">
+<table style="float: left">
 {% render_table table %}
+</table>
+<table class="floatedTable">
+
+<div id="chart" style="width: 40%;">
+{% include "svg/bar_chart.svg" %}
+{% include "svg/bar.svg" %}
+{% include "svg/les_mis.svg" %}
+</table>
+</div>
+</div>
 </body>
-{% endblock %}
+{% endblock content  %}

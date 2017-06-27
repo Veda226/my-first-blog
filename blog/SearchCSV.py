@@ -26,11 +26,12 @@ def searchISBN(isbn):
                                  if a == 12:
                                       parts = lista[0:a]
                                       print (parts)
+                                      a = a + 12
                                  else:
-                                      parts = lista[a:a+12]
+                                      parts = lista[a-12:a]
                                       print (parts)
-                            a = a + 12
-                            return parts
+                                      a = a + 12                            
+                            print(a)
                        else:
                             for i in range(0,listb):
                                  lista.insert(0,0)
@@ -48,7 +49,6 @@ def searchISBN(isbn):
                                  parts = lista[a:a+12]
                                  print (parts)
                             a = a + 12
-                            return parts
                          
 
 
