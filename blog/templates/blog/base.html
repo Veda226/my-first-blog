@@ -4,75 +4,84 @@
 <html>
 
 
-<head>
-
-	
-<meta charset="utf-8">
-	
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	
-<title>Stock Optimization</title>
-
-	
-<link rel="stylesheet" href="{% static 'css/demo.css' %}">
-	
-<link rel="stylesheet" href="{% static 'css/header.css' %}">
-	
-<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-
-	
-<header class="header-basic-light">
+  <head>
 
 
-	<div class="header-limiter">
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-		<h1><a href="#">Stock<span>Optimization</span></a></h1>
+    <title>Stock Optimization</title>
 
 
-		<nav>
-<a href="/">Home</a>
-		<a href="/Isbn" class="selected">Predict</a>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
 
-		<a href="/Pricing/">Pricing</a>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
 
-		<a href="#">About</a>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
-		<a href="#">Faq</a>
-
-		<a href="#">Contact</a>
-		
-		</nav>
-
-	</div>
-
-	
-</header>
-
-	
-
-
-</head>
-
-
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
 
 
-                <div class="col-md-9">
-                    {% block content %}
-		    {% endblock %}
-                </div>
-		
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-                <div class="col-md-9">
-                    {% block chart %}
-		    {% endblock %}
-                </div>
-					
 
-</body>
+
+    <header class="header-basic-light">
+
+
+      <div class="header-limiter">
+
+
+        <h1><a href="/">Stock<span>Optimization</span></a></h1>
+
+
+        <nav>
+          <a href="/">Home</a>
+          <a href="/Isbn" class="selected">Forecast</a>
+
+          <a href="/Pricing/">Refresh MSL</a>
+
+          <a href="#">About</a>
+
+          <a href="#">Faq</a>
+
+          <a href="#">Contact</a>
+
+        </nav>
+
+      </div>
+
+
+    </header>
+
+
+
+
+  </head>
+
+
+  <body>
+
+
+    <div container>
+      <div class="col-md-9">
+        {% block content %} {% endblock %}
+      </div>
+
+
+      <div class="col-md-9">
+        {% block chart %} {% endblock %}
+      </div>
+      <div class="col-md-9">
+        {% block test %} {% endblock %}
+      </div>
+
+    </div>
+  </body>
+
 </html>
